@@ -1,0 +1,61 @@
+{
+  "release_validation_time": "2026-11-06T15:32:32.847007+00:00",
+  "gpu": "NVIDIA GeForce RTX 5060 Laptop GPU",
+  "regression_scope": "197 previously used photos. This is a regression, with 70 sky scenes, 118 negative photos, and 9 species photos.",
+  "images_completed": 197,
+  "full_image_detections_preserved": 197,
+  "sky_box_coverage": {
+    "normal": {
+      "gt": 70,
+      "matched": 69,
+      "small_gt": 5,
+      "small_matched": 5,
+      "recall": 0.9857142857142858,
+      "small_recall": 1.0
+    },
+    "tiled": {
+      "gt": 70,
+      "matched": 69,
+      "small_gt": 5,
+      "small_matched": 5,
+      "recall": 0.9857142857142858,
+      "small_recall": 1.0
+    }
+  },
+  "negative_images": {
+    "normal": {
+      "images": 118,
+      "with_boxes": 10,
+      "with_confirmed_species": 0,
+      "boxes": 14
+    },
+    "tiled": {
+      "images": 118,
+      "with_boxes": 10,
+      "with_confirmed_species": 0,
+      "boxes": 14
+    }
+  },
+  "tile_totals": {
+    "windows": 999,
+    "candidates": 309,
+    "added": 0,
+    "detector_passes": 1393
+  },
+  "json_handoff": {
+    "test_setup": "JSON round trip on one Windows GPU PC",
+    "continuation_repeat_initial_yolo_calls": 0,
+    "rejected_cases": [
+      "different_pixels",
+      "tampered_packet"
+    ],
+    "final_crops_saved": true
+  },
+  "historical_species_test": {
+    "scope": "China iNaturalist photos. Whole-image workflow. A photo without a detection counts as an error.",
+    "photos": 188,
+    "species": 95,
+    "prior_top1_correct": 169,
+    "selected_top1_correct": 172
+  }
+}
