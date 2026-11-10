@@ -1,0 +1,222 @@
+{
+  "schema_version": 1,
+  "purpose": "Fresh execution of the frozen V1.1 application on two existing CC0 functional examples. Not a new held-out benchmark.",
+  "primary": {
+    "scientific_name": "Tachybaptus ruficollis",
+    "common_name": "小䴙䴘",
+    "accepted": true,
+    "detector_confidence": 0.7202462553977966,
+    "model_score": 0.9999841450071256,
+    "xyxy": [
+      269.67041015625,
+      576.6506958007812,
+      383.2131042480469,
+      662.7962036132812
+    ],
+    "top5": [
+      {
+        "name": "Tachybaptus ruficollis",
+        "confidence": 0.9999841450071256,
+        "common_name": "小䴙䴘"
+      },
+      {
+        "name": "Podiceps cristatus",
+        "confidence": 6.095338553585945e-06,
+        "common_name": "凤头䴙䴘"
+      },
+      {
+        "name": "Podiceps grisegena",
+        "confidence": 1.7789121219464247e-06,
+        "common_name": "赤颈䴙䴘"
+      },
+      {
+        "name": "Podiceps auritus",
+        "confidence": 1.189040236468117e-06,
+        "common_name": "角䴙䴘"
+      },
+      {
+        "name": "Aythya ferina",
+        "confidence": 7.658521000314568e-07,
+        "common_name": "红头潜鸭"
+      }
+    ]
+  },
+  "main_example": "little-grebe",
+  "runtime": {
+    "device": "NVIDIA GeForce RTX 5060 Laptop GPU",
+    "numeric_mode": "bf16",
+    "selected_variant": "blend50_N_ridge",
+    "all_model_assets_verified": true,
+    "frozen_selection_sha256": "27a0bf7e0769012f56f5845ae43ecc7efbea43e0f7c7fd995fadc0b12f8ce3ce",
+    "config_sha256": "ba8cfea3c6b8c2fe04afedfee07ec1e37d55c07315b0bd3fcf96b0e9c988f7b7",
+    "detector_sha256": "d8be2ba3c7f21c820433c21140438fd6f3c529e4c55f1bb1044099d7db05a00f",
+    "config_unchanged_after_run": true,
+    "detector_unchanged_after_run": true
+  },
+  "display_transform": "Original and annotated previews are JPEG re-encodings with metadata removed. No boxes were redrawn. Each crop.png is the byte-identical PNG saved from the actual shared classifier input.",
+  "score_interpretation": "Species scores are calibrated model outputs for each photo, not measured recognition accuracy or a guarantee of correctness.",
+  "examples": [
+    {
+      "example_id": "little-grebe",
+      "created_at": "2026-11-10T13:39:12.870972+08:00",
+      "source": {
+        "photo_id": 444658310,
+        "observation_url": "https://www.inaturalist.org/observations/248813120",
+        "photo_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/444658310/large.jpeg",
+        "license": "CC0 1.0",
+        "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+        "source_sha256": "51b11efd4e92e1b8585b49aabc1855871cd66a62c02f84a3b7b298fd50eecabb"
+      },
+      "image_size": [
+        768,
+        1024
+      ],
+      "crop_size": [
+        137,
+        137
+      ],
+      "bird_count": 1,
+      "detection_mode": "tiled",
+      "tile_windows": 4,
+      "tile_added": 0,
+      "normal_output_preserved": true,
+      "primary": {
+        "scientific_name": "Tachybaptus ruficollis",
+        "common_name": "小䴙䴘",
+        "accepted": true,
+        "detector_confidence": 0.7202462553977966,
+        "model_score": 0.9999841450071256,
+        "xyxy": [
+          269.67041015625,
+          576.6506958007812,
+          383.2131042480469,
+          662.7962036132812
+        ],
+        "top5": [
+          {
+            "name": "Tachybaptus ruficollis",
+            "confidence": 0.9999841450071256,
+            "common_name": "小䴙䴘"
+          },
+          {
+            "name": "Podiceps cristatus",
+            "confidence": 6.095338553585945e-06,
+            "common_name": "凤头䴙䴘"
+          },
+          {
+            "name": "Podiceps grisegena",
+            "confidence": 1.7789121219464247e-06,
+            "common_name": "赤颈䴙䴘"
+          },
+          {
+            "name": "Podiceps auritus",
+            "confidence": 1.189040236468117e-06,
+            "common_name": "角䴙䴘"
+          },
+          {
+            "name": "Aythya ferina",
+            "confidence": 7.658521000314568e-07,
+            "common_name": "红头潜鸭"
+          }
+        ]
+      },
+      "same_exact_crop_for_both_encoders": true,
+      "crop_sha256": "bb681dada0ed30cd18a8cb71e7f940783c10d9addbdb0fa61af8b1d768dfd023",
+      "artifacts": {
+        "original.jpg": {
+          "path": "media/recognition-example/original.jpg",
+          "sha256": "a54f9c9b66dc03b21471ef72515d0bb8dbaa34c93feaca2f0681ab848f1054e9"
+        },
+        "annotated.jpg": {
+          "path": "media/recognition-example/annotated.jpg",
+          "sha256": "3f37fe7232add8b9f3f3e6ba90e74c40714356f01d6fc11c06ef9260bb27e9c7"
+        },
+        "crop.png": {
+          "path": "media/recognition-example/crop.png",
+          "sha256": "bb681dada0ed30cd18a8cb71e7f940783c10d9addbdb0fa61af8b1d768dfd023"
+        }
+      }
+    },
+    {
+      "example_id": "grey-heron",
+      "created_at": "2026-11-10T13:39:14.776213+08:00",
+      "source": {
+        "photo_id": 754004838,
+        "observation_url": "https://www.inaturalist.org/observations/410021035",
+        "photo_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/754004838/large.jpg",
+        "license": "CC0 1.0",
+        "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+        "source_sha256": "2dbb7e8d49ed6d809361ce9377a785db99cdb37ed6f9d6bd544031de7834c6e4"
+      },
+      "image_size": [
+        768,
+        1024
+      ],
+      "crop_size": [
+        76,
+        76
+      ],
+      "bird_count": 1,
+      "detection_mode": "tiled",
+      "tile_windows": 4,
+      "tile_added": 0,
+      "normal_output_preserved": true,
+      "primary": {
+        "scientific_name": "Ardea cinerea",
+        "common_name": "苍鹭",
+        "accepted": true,
+        "detector_confidence": 0.5080845355987549,
+        "model_score": 0.9999772671057334,
+        "xyxy": [
+          332.6840515136719,
+          693.6709594726562,
+          360.9572448730469,
+          756.3179321289062
+        ],
+        "top5": [
+          {
+            "name": "Ardea cinerea",
+            "confidence": 0.9999772671057334,
+            "common_name": "苍鹭"
+          },
+          {
+            "name": "Ardea purpurea",
+            "confidence": 3.4237450045629535e-06,
+            "common_name": "草鹭"
+          },
+          {
+            "name": "Recurvirostra avosetta",
+            "confidence": 1.56289274163479e-06,
+            "common_name": "反嘴鹬"
+          },
+          {
+            "name": "Egretta garzetta",
+            "confidence": 1.3059092137959068e-06,
+            "common_name": "小白鹭"
+          },
+          {
+            "name": "Ardea alba",
+            "confidence": 8.681826569239318e-07,
+            "common_name": "大白鹭"
+          }
+        ]
+      },
+      "same_exact_crop_for_both_encoders": true,
+      "crop_sha256": "d03fada313bff66ddb563b2a0759e34ee7fc084cfa1eb8046d0d8eeb8169a42c",
+      "artifacts": {
+        "original.jpg": {
+          "path": "media/recognition-example/grey-heron/original.jpg",
+          "sha256": "d4f1e73f7ac014073b4c40fdaeed08498d0a208ed96764cf1b2cb17049e187dc"
+        },
+        "annotated.jpg": {
+          "path": "media/recognition-example/grey-heron/annotated.jpg",
+          "sha256": "59ef7529ec1cbd3f922dbe1ba8bc8d0f70bfe66cefae5df21850ff7464c157f8"
+        },
+        "crop.png": {
+          "path": "media/recognition-example/grey-heron/crop.png",
+          "sha256": "d03fada313bff66ddb563b2a0759e34ee7fc084cfa1eb8046d0d8eeb8169a42c"
+        }
+      }
+    }
+  ]
+}
