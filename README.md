@@ -4,7 +4,20 @@
 
 English · [简体中文](README.zh-CN.md) · [日本語](README.ja.md)
 
+**Non-commercial use only.** See the [usage terms](USAGE.md) for the author's original contributions and third-party components.
+
 Yushi (羽识) detects birds in photographs and suggests a species for each retained crop. It focuses on birds found in China and ranks candidates from a reference list of **1,343 species**. The Windows app runs locally and shows the detection box, the actual classifier crop, ranked species suggestions, and whether the result needs review.
+
+## How recognition works
+
+![Yushi recognition pipeline from bird detection to species identification](media/recognition-pipeline.en.svg)
+
+1. **Find the birds.** The frozen fourth-version YOLO11n detector runs a 640-resolution full-image pass and a supplemental 1280-resolution full-image pass. Tiled mode adds overlapping windows.
+2. **Verify and crop.** Low-confidence detections undergo bird/background verification; strong detections bypass this verifier. Supplemental detections are screened and merged while initial detections are retained. Each bird is cropped individually from the original image with 1.2× context.
+3. **Identify each crop.** Frozen BioCLIP 2 and BioCLIP 2.5 encoders feed classifier branches adapted for Chinese birds. Their calibrated species probabilities are blended with equal weights, **50% + 50%**, to rank species candidates.
+4. **Inspect the result.** Confirmation and review status follow the original BioCLIP 2 branch's rules. The app displays the ranking and status, and saves detection images, individual crops, and recognition results locally.
+
+## Recognition examples
 
 ![Yushi workflow on a Little Grebe photograph](media/little-grebe-workflow.png)
 
@@ -15,14 +28,19 @@ Yushi (羽识) detects birds in photographs and suggests a species for each reta
 | Stage | Starting model | Training or adaptation used in V1.1 |
 | --- | --- | --- |
 | Bird detection | Ultralytics pretrained **YOLO11n** (`yolo11n.pt`) | Fine-tuned for a single bird class using annotated birds, hard negatives, and complex scenes. The released application uses the frozen fourth-version detector. |
-| Bird vs. background verification | ImageNet-pretrained **YOLO11n-cls** (`yolo11n-cls.pt`) | Fine-tuned as a binary verifier on 6,270 bird crops and 5,778 background crops. This verifier screens detection candidates. |
+| Bird vs. background verification | ImageNet-pretrained **YOLO11n-cls** (`yolo11n-cls.pt`) | Fine-tuned as a binary verifier on 6,270 bird crops and 5,778 background crops. This verifier screens low-confidence detection candidates. |
 | Species recognition | Imageomics **BioCLIP 2** (ViT-L/14) and **BioCLIP 2.5** (ViT-H/14) | Both image encoders are frozen. The BioCLIP 2 branch uses an adapted classifier and review rules developed with 736 support photos across 80 species. The BioCLIP 2.5 branch combines taxonomy text scores with a weighted ridge head fitted on 1,434 usable crops across 80 species. These support sets are oriented toward Chinese birds and draw on public iNaturalist observations. |
 
-The default species result blends the two calibrated branch distributions with equal weights. Each accepted detection is cropped from the original image with 1.2× context. The adaptation is in the classifier heads, review rules, and probability fusion. The image encoders retain their pretrained weights.
+The default species ranking blends the two calibrated branch distributions with equal weights. Confirmation and review status retain the original BioCLIP 2 branch's rules. Each retained detection is cropped from the original image with 1.2× context. The adaptation is in the classifier heads, review rules, and probability fusion. The image encoders retain their pretrained weights.
 
-## AI OpenBuild contribution
+## Detection modes and handoff
 
-The November 6 Windows release integrates a selectable second pass using overlapping 640-pixel tiles at a 480-pixel stride. It checks tile-edge candidates and merges duplicates while preserving the full-image detections. The release also adds a detector handoff that ties initial boxes to the original image and detector configuration. The continuation can reuse those boxes and skip the repeated initial pass. The handoff was tested on one Windows GPU PC.
+- **Normal mode** runs full-image detection at 640 and a supplemental full-image pass at 1280, followed by individual crops and species recognition.
+- **Tiled mode** adds overlapping 640-pixel tiles at a 480-pixel stride. It checks tile-edge candidates and merges duplicates while preserving normal-mode detections.
+
+Additional boxes from the high-resolution and tiled passes must pass the original BioCLIP 2 branch's acceptance rules. Initial boxes are retained even when the species result needs review. Probability fusion updates species ranking while preserving those acceptance and review decisions.
+
+A detector handoff binds the initial boxes to the original image and detector configuration. Subsequent processing can validate and reuse these boxes to skip a repeated initial pass. This handoff has been tested on one Windows GPU PC.
 
 ## Measured results
 
@@ -35,8 +53,12 @@ The November 6 Windows release integrates a selectable second pass using overlap
 
 The benchmark and the regression answer different questions. The tested species count is 95. The tiling experiment measured preservation of existing detections on those controls. See [release validation data](evidence/validation.json).
 
-## Run the review example
+## Run the code example
 
-`python review/demo.py` exercises tile coordinates, internal-edge detection, and JSON handoff validation with a synthetic RGB fixture. [The tiling module](review/tiling.py) comes from the released application. The complete desktop app requires its separate Windows runtime and model assets. The images above show saved outputs from real local inference.
+`python review/demo.py` exercises tile coordinates, internal-edge detection, and JSON handoff validation with a synthetic RGB fixture. [The tiling module](review/tiling.py) comes from the released application. The complete desktop app requires its separate Windows runtime and model assets. The photographs in Recognition examples show saved outputs from real local inference.
+
+## Usage terms
+
+The author's original contributions are available only for personal learning, teaching, and non-commercial research. Commercial use requires the author's prior written consent. Third-party code, models, and photographs remain subject to their original licenses; this notice does not change those terms. See [USAGE.md](USAGE.md) and [CREDITS.md](CREDITS.md).
 
 **Keywords** bird-recognition, china-birds, yolo11, bioclip, computer-vision, offline-inference, wildlife-ai
