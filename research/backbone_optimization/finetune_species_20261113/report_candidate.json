@@ -1,0 +1,8 @@
+{
+  "id": "tail_lr1e5_full_residual1",
+  "family": "tail_lr1e5",
+  "selection_sha256": "73ecf04fb89001a7ba32db73d43fc337b4adf002710f20b3f5fdd9e73dcfe303",
+  "choice_made_before_test_features": true,
+  "criterion": "Best validation full residual among actually fine-tuned candidates; research focus only, not a deployment upgrade",
+  "deployment_candidate_id": null
+}

@@ -1,0 +1,16 @@
+{
+  "status": "completed",
+  "report_sha256": "f0a862c00f63a60fd2b6982ed45702cdd65674683d8453f3119af603de4330af",
+  "runtime_verification_sha256": "e7731e1b3825bc2831f70cf0db0f2b93a27af93d866e62b2b0519e970ef2a71b",
+  "training_runs": 18,
+  "backbone_finetuning_runs": 12,
+  "frozen_backbone_controls": 6,
+  "training_images": 1577,
+  "fresh_test_images": 95,
+  "old_deployed_correct": 80,
+  "validation_preselected_research_correct": 79,
+  "any_finetuned_candidate_improves_test_top1": false,
+  "original_YOLO_or_deployment_replaced": false,
+  "independent_test_reselection": false,
+  "result": "No accuracy gain; retain original deployment"
+}

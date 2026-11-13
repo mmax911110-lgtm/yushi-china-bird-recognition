@@ -1,0 +1,16 @@
+{
+  "classes": "80 existing supported species, retain deployment global IDs",
+  "projection": 256,
+  "dropout": 0.2,
+  "epochs": 30,
+  "batch_size": 128,
+  "learning_rate": 0.0003,
+  "weight_decay": 0.01,
+  "seeds": [131, 271, 719],
+  "residual_weights": [0.25, 0.5, 1.0, 2.0, 4.0],
+  "training_groups": ["original", "expanded"],
+  "validation": ["n_val", "o_val"],
+  "final_test": "New photographer-disjoint observations, frozen before prediction",
+  "detector": "Frozen production YOLO normal 640+1280, primary unchanged",
+  "metrics": ["Top1", "Top3", "MacroF1", "per_species", "paired_errors"]
+}

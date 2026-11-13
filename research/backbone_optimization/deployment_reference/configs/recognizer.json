@@ -1,0 +1,83 @@
+{
+  "version": "1.1 NVIDIA",
+  "selected_variant": "blend50_N_ridge",
+  "labels": "configs/china_labels.json",
+  "species_count": 1343,
+  "models": {
+    "models/detection/detector_reference.pt": "models/detection/detector_reference.pt",
+    "models/detection/bird_background_verifier.pt": "models/detection/bird_background_verifier.pt",
+    "models/bioclip2/open_clip_model.safetensors": "models/bioclip2/open_clip_model.safetensors",
+    "models/bioclip2/open_clip_config.json": "models/bioclip2/open_clip_config.json",
+    "models/bioclip25/open_clip_model.safetensors": "models/bioclip25/open_clip_model.safetensors",
+    "models/bioclip25/open_clip_config.json": "models/bioclip25/open_clip_config.json",
+    "models/species/original_text.npz": "models/species/original_text.npz",
+    "models/species/adapted_head.npz": "models/species/adapted_head.npz",
+    "models/species/negative_text.npz": "models/species/negative_text.npz",
+    "models/species/heads_p.npz": "models/species/heads_p.npz"
+  },
+  "detector": {
+    "imgsz": 640,
+    "conf": 0.16,
+    "iou": 0.7,
+    "classes": [
+      0
+    ],
+    "verifier_threshold": 0.15,
+    "detector_bypass": 0.35
+  },
+  "species_e": {
+    "mixture": 0.75,
+    "protect": 0.8,
+    "offset": 0.0,
+    "temperature": 1.2686676279419271,
+    "original_temperature": 1.1915871260205977,
+    "gate": {
+      "kind": "logistic_birdness",
+      "parameters": {
+        "mean": [
+          0.7441734140760758,
+          0.5842077113600338,
+          0.15996570271604202,
+          0.025508240461349488
+        ],
+        "scale": [
+          0.03375053320675915,
+          0.021960191332153167,
+          0.04090698029201507,
+          0.021437907640868743
+        ],
+        "coef": [
+          1.5727875232696533,
+          -0.2669939696788788,
+          1.4409680366516113,
+          0.8198590874671936
+        ],
+        "intercept": 2.6789662837982178,
+        "C": 0.1
+      },
+      "threshold": 0.805033802986145,
+      "species_probability_threshold": 0.5
+    }
+  },
+  "p_temperatures": {
+    "P_named_zero": 2.1970318702700102,
+    "P_taxonomy_zero": 2.1492898905101447,
+    "P_taxonomy_ridge": 2.829207761490098,
+    "P_taxonomy_prototype": 2.481375097832627
+  },
+  "frozen_P_selection_sha256": "27a0bf7e0769012f56f5845ae43ecc7efbea43e0f7c7fd995fadc0b12f8ce3ce",
+  "asset_hashes": {
+    "models/detection/detector_reference.pt": "d8be2ba3c7f21c820433c21140438fd6f3c529e4c55f1bb1044099d7db05a00f",
+    "models/detection/bird_background_verifier.pt": "9d9207becf7f8e89709dbc7447b2fc2ea6d9034588e0f0d0e265db65bf87948c",
+    "models/bioclip2/open_clip_model.safetensors": "b7b2bf6fbc95799e42630e394cf95803892ab447c1a8ab629dbc82fbeaf7dfef",
+    "models/bioclip2/open_clip_config.json": "1bf947e96e943fe50efd5c3e26c37f843a2fa3c358967719a68c8a6d17ce68c8",
+    "models/bioclip25/open_clip_model.safetensors": "ac2e37c2f89ef8e6b889176a9a3f418970ad9db15a218bd29e3321e95c46ae97",
+    "models/bioclip25/open_clip_config.json": "4c131846348300c77b5bee06690b0e94ee85ca9ce9a30a853b36084d00dcd25c",
+    "models/species/original_text.npz": "284de5e20e8295de788323135bb36c1ce7edaf9935878884ae93a8bb65ed279f",
+    "models/species/adapted_head.npz": "4278f9698ffa2bf5531fc6364767ac19486966165eac76f087b4df474daf822c",
+    "models/species/negative_text.npz": "ebf3ea8aa8875b0d395245d7d9a9e803e33b3aa29235315f2dc3bb84991fbaed",
+    "models/species/heads_p.npz": "5e57782dc234362f9f4027ff654f8512741ddd5b556cb4bfbf6b92f6b342b8ea",
+    "configs/china_labels.json": "e6be4147603aa0a51a137538feccecda65f2395ef427cda08a6f3e98d0a6a266"
+  },
+  "reference_numeric_mode": "cuda bfloat16 autocast; float32 weights"
+}

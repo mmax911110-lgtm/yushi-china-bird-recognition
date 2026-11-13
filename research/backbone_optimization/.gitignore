@@ -1,0 +1,21 @@
+# Preserve the fixed official source, including its models/ and datasets/ code.
+!dinov2_species_20261113/assets/dinov2_source/
+!dinov2_species_20261113/assets/dinov2_source/**
+__pycache__/
+cache/
+runtime/
+/photos/
+/datasets/
+*.pt
+*.pth
+*.safetensors
+*.npz
+*.npy
+*.onnx
+*.jpg
+*.jpeg
+*.png
+*.webp
+*.zip
+*.log
+.env*

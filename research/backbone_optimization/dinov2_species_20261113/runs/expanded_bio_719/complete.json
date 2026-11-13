@@ -1,0 +1,11 @@
+{
+  "mode": "bio",
+  "group": "expanded",
+  "seed": 719,
+  "best_correct": 288,
+  "train_images": 1577,
+  "validation_with_target_crops": 302,
+  "checkpoint": "D:\\项目\\鸟类识别\\测试\\fomo_bird_demo\\dinov2_species_20261113\\runs\\expanded_bio_719\\best.pt",
+  "checkpoint_sha256": "6e1d4a816329e3abfaa7a41b731101e049272db31c1ce5cb29eed599a7b25ec3",
+  "trainable_parameters": 283728
+}

@@ -1,0 +1,25 @@
+{
+  "architecture": "bioclip_tail",
+  "train_splits": ["train", "expanded"],
+  "validation": ["n_val", "o_val"],
+  "warmstart_group": "expanded",
+  "seeds": [131, 271, 719],
+  "experiments": [
+    {"id": "bio_head_control", "train_tail": false, "tail_learning_rate": 0.0},
+    {"id": "bio_tail_lr1e6", "train_tail": true, "tail_learning_rate": 0.000001},
+    {"id": "bio_tail_lr3e6", "train_tail": true, "tail_learning_rate": 0.000003}
+  ],
+  "epochs": 12,
+  "batch_size": 32,
+  "cache_batch_size": 4,
+  "head_learning_rate": 0.0001,
+  "weight_decay": 0.01,
+  "label_smoothing": 0.025,
+  "max_gradient_norm": 1.0,
+  "residual_weights": [0.25, 0.5, 1.0, 2.0, 4.0],
+  "prefix_cache": "Original LocalEncoder RGB crop preprocessing; _embeds then resblocks0..22; FP32 storage of BF16 tokens; no augmentation",
+  "normalization": "Original OpenCLIP _pool then proj then normalize in encoder numeric dtype; cast final normalized feature to FP32",
+  "frozen_features": "Original DINOv2 CLS embeddings of identical crops; no DINO backbone update",
+  "selection": "Only original N/O development validation; no historical61/new128/fresh test selection",
+  "protected_detector": "Fourth-version YOLO, original crops, class order and species gate remain unchanged"
+}

@@ -1,0 +1,23 @@
+{
+  "train_splits": ["train", "expanded"],
+  "validation": ["n_val", "o_val"],
+  "warmstart_group": "expanded",
+  "seeds": [131, 271, 719],
+  "experiments": [
+    {"id": "head_control", "train_tail": false, "tail_learning_rate": 0.0},
+    {"id": "tail_lr1e5", "train_tail": true, "tail_learning_rate": 0.00001},
+    {"id": "tail_lr3e5", "train_tail": true, "tail_learning_rate": 0.00003}
+  ],
+  "epochs": 12,
+  "batch_size": 32,
+  "head_learning_rate": 0.0001,
+  "weight_decay": 0.01,
+  "label_smoothing": 0.025,
+  "max_gradient_norm": 1.0,
+  "residual_weights": [0.25, 0.5, 1.0, 2.0, 4.0],
+  "dino_preprocessing": "Existing official Resize256/CenterCrop224/ImageNet normalization; CUDA BF16 encoder math",
+  "prefix_cache": "Unnormalized CLS+patch tokens after blocks 0..10; float32 storage; no augmentation",
+  "bio_features": "Existing frozen BioCLIP2 normalized features from identical square crops",
+  "selection": "Only existing N/O validation; no previous61/new128 or fresh test used for selection",
+  "protected_detector": "Fourth-version weights, boxes and original species gate are unchanged"
+}

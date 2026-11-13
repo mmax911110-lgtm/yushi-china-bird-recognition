@@ -1,0 +1,12 @@
+{
+  "architecture": "bioclip_tail",
+  "experiments": 3,
+  "seeds": [
+    131,
+    271,
+    719
+  ],
+  "actual_backbone_updated": true,
+  "DINO_backbone_updated": false,
+  "test_used_for_training_or_selection": false
+}

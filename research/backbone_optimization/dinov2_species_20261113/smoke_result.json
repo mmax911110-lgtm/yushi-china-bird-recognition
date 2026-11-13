@@ -1,0 +1,24 @@
+{
+  "passed": true,
+  "real_crops": 2,
+  "bio_shape": [
+    2,
+    768
+  ],
+  "dino_shape": [
+    2,
+    384
+  ],
+  "patch_shape": [
+    2,
+    256,
+    384
+  ],
+  "finite_loss": 4.388765811920166,
+  "frozen_parameter_hashes_equal": true,
+  "head_has_gradients_and_updates": true,
+  "checkpoint_roundtrip_equal": true,
+  "class_indices_verified": true,
+  "cuda_peak_allocated_MiB": 1279.7841796875,
+  "seconds": 10.283511100002215
+}

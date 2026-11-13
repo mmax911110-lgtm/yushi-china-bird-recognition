@@ -1,0 +1,12 @@
+{
+  "status": "review_ready",
+  "protected_asset_hashes_verified_again": 11,
+  "cached_baseline_historical_top1_reconciled": true,
+  "source_images_downloaded": 0,
+  "new_model_weights_downloaded": 0,
+  "new_model_training_started": false,
+  "new_gpu_model_inference": false,
+  "CUB_training_candidates": 658,
+  "CUB_exact_cross_manifest_duplicates": 0,
+  "CUB_internal_exact_duplicate_groups": 0
+}

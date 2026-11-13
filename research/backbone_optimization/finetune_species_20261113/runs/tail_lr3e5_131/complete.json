@@ -1,0 +1,22 @@
+{
+  "experiment": "tail_lr3e5",
+  "seed": 131,
+  "train_tail": true,
+  "train_images": 1577,
+  "validation_images_with_supported_crops": 302,
+  "best_correct": 288,
+  "checkpoint": "D:\\项目\\鸟类识别\\测试\\fomo_bird_demo\\finetune_species_20261113\\runs\\tail_lr3e5_131\\best.pt",
+  "checkpoint_sha256": "feb3569bbb1d79e7d08c286ed5644a958921308ab40a16c889eb8e286c980561",
+  "tail_before_sha256": "00519d2ed54c78c1a09f3569f50f4c4b2f201afbea5643b547a5fd8eedd01cd9",
+  "tail_after_sha256": "cb9e00c08b4a7949fdce4b6611b3657469ae721eca8f25768efbee10892bfee6",
+  "norm_before_sha256": "029daceaa38541b9c6ff08acd7e623c161691cb086275334dc36423e0271615e",
+  "norm_after_sha256": "d3ae90355664d24141555ef8f1af5561fa300070d7690ac4180e259691b8b482",
+  "head_updated": true,
+  "selected_epoch": 1,
+  "selected_tail_sha256": "5117c1409235d803dbc3eccaf64c68255690e4368c0cdf7c98ffeee95931a894",
+  "selected_norm_sha256": "5351105eb2c188d7f9ddbe24e4c165b870261899489880b7b8ab7c7ab7897276",
+  "selected_visual_backbone_updated": true,
+  "selected_head_updated": true,
+  "trainable_parameters": 2224336,
+  "peak_cuda_allocated_mib": 227.52001953125
+}
