@@ -14,6 +14,8 @@ This repository contains the architecture, executable tiling and handoff example
 
 ## Recognition pipeline
 
+This experiment branch also provides an [optional per-bird specialist-review desktop GUI](desktop_review/README.md), launched with `启动相似种复核GUI.cmd` and the separately installed NVIDIA runtime. It keeps the original batch, normal/tiled and dual-BioCLIP results. Willow review is an opt-in frozen experiment; thrush and sparrow reviewers remain inactive. Specialist advice never overwrites the original recognition.
+
 ![Yushi bird detection, cropping, and species recognition with real inference images](media/recognition-pipeline.en.svg)
 
 The photographs, detection overlay, and crop in the diagram come from a fresh local run of the frozen application. Their source files and run record are linked below.

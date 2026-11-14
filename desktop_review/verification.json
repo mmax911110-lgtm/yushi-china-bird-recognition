@@ -1,0 +1,55 @@
+{
+  "date_local": "2026-11-15",
+  "timezone": "Asia/Shanghai",
+  "scope": "GUI integration regression; not a new independent accuracy evaluation",
+  "cpu_and_Tk_unittests": {
+    "passed": 32,
+    "failed": 0,
+    "visual_models_loaded": false,
+    "torch_imported": false,
+    "GUI_synthetic_bird_rows": 3,
+    "tested_window_sizes": [[1280, 900], [1100, 760], [960, 650]],
+    "worker_closed_cleanly": true
+  },
+  "real_GPU_regression": {
+    "known_validation_photos": 2,
+    "original_engine_calls": 4,
+    "integrated_engine_calls": 4,
+    "modes": ["normal", "tiled"],
+    "paired_exact_primary_fingerprints_equal": 4,
+    "fingerprint_fields": ["bird_id", "xyxy", "confidence", "species_info", "crop_sha256"],
+    "retained_candidate_counts": [3, 3, 2, 2],
+    "candidate_counts_are_not_ground_truth_bird_counts": true,
+    "willow_head_actually_executed": true,
+    "willow_head_sha256": "0745aa534bd75c331b3977f099bcd60c9637f7d9b4ae35ac2b47608a487fc6c6",
+    "willow_statuses": ["uncertain", "uncertain"],
+    "sparrow_status": "not_enabled",
+    "unavailable_specialist_errors": 0,
+    "additional_visual_forwards_for_review": 0,
+    "original_protected_files_checked": 58,
+    "original_protected_files_unchanged": true,
+    "source_photos_unchanged": true,
+    "engine_closed": true,
+    "local_full_report": "outputs/desktop-review/runtime-verification/report.json"
+  },
+  "real_saved_result_GUI": {
+    "passed": true,
+    "new_inference_started": false,
+    "torch_imported": false,
+    "review_text_bound_to_selected_crop": true,
+    "input_JSON_files_unchanged": true,
+    "worker_closed": true,
+    "window_capture_visually_inspected": true,
+    "local_preview": "outputs/desktop-review/gui-real-saved-preview.png"
+  },
+  "release": {
+    "review_default_enabled": false,
+    "willow": "frozen R2 experimental advice only; original suggestion gates retained",
+    "thrush": "no_advice",
+    "sparrow": "no_advice",
+    "automatic_species_override": false,
+    "outgroup_confusion_neighbors_configured": false,
+    "models_trained_or_weights_changed": false,
+    "large_weights_runtime_and_private_photos_committed": false
+  }
+}

@@ -28,4 +28,4 @@
 
 第三方 DINOv2 代码遵循其目录内 LICENSE，固定 revision 和权重摘要见 dinov2_species_20261113/assets/dinov2.json。本项目原创代码沿用仓库 USAGE.md；未重新许可第三方组件或数据。
 
-此分支仅保存分类头与底层网络实验。多鸟流程审查和GUI本轮修改未混入这次分支。
+以上目录保留原分类头与底层网络实验归档。2026-11-15 同一分支另在仓库根目录新增 `desktop_review/` 和启动脚本，接入独立相似种复核 GUI，说明见 [desktop_review/README.md](../../desktop_review/README.md)；本目录中的历史归档与 deployment_reference 快照保持原样。
